@@ -1,0 +1,106 @@
+/* Fondo con gradiente que utiliza los colores rojo y verde pacay */
+body {
+  font-family: 'Cambria', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #9c2a2a, #578387); /* Rojo y verde pacay */
+  animation: backgroundAnimation 20s infinite alternate;
+  color: #fff;
+}
+
+/* Animación de fondo */
+@keyframes backgroundAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
+
+/* Contenedor central con sombra sutil */
+.container {
+  max-width: 600px;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeInAnimation 1s ease-in-out;
+}
+
+/* Mensajes con mejor formato */
+.mensaje {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+/* Botón con efecto de hover */
+.boton {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #4CAF50; /* Verde pacay */
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.boton:hover {
+  background-color: #45a049; /* Cambio de color al pasar el mouse */
+  transform: scale(1.05); /* Efecto de agrandar ligeramente */
+}
+
+/* Imagen centrada con bordes suaves y sombra */
+.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 15px;  /* Bordes redondeados */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);  /* Sombra sutil para profundidad */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;  /* Animación suave */
+}
+
+/* Efecto de zoom al pasar el mouse */
+.centered-image:hover {
+  transform: scale(1.05);  /* Aumenta el tamaño de la imagen */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);  /* Aumenta la sombra para mayor énfasis */
+}
+
+/* Si la imagen es más grande que el contenedor, aseguramos que se ajuste */
+.centered-image img {
+  width: 100%;  /* Hace que la imagen ocupe todo el ancho disponible */
+  height: auto;  /* Mantiene la proporción de la imagen */
+  border-radius: 15px;  /* Bordes redondeados */
+}
+
+
+/* Animación de aparición suave */
+@keyframes fadeInAnimation {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Moviendo el contenedor */
+.move-up {
+  transform: translateY(-100%);
+}

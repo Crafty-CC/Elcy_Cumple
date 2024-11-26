@@ -1,0 +1,142 @@
+body {
+    font-family: 'Cambria', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #F9E4D4, #F3D3C3); /* Beige suave con toque cálido */
+    animation: backgroundAnimation 20s infinite alternate;
+    -webkit-animation: backgroundAnimation 20s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeInAnimation 1s ease-in-out;
+}
+
+#title {
+    font-size: 3rem;
+    color: #fff; /* Blanco puro para resaltar */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    padding: 10px;
+    background: linear-gradient(to right, #6B9E64, #4B8E49); /* Verde Pacay suave */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInAnimation 1.5s ease-in-out;
+}
+
+h2.invitacion {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #B84E4E; /* Rojo Pacay suave */
+    margin-top: 10px;
+    line-height: 1.6;
+    animation: fadeInAnimation 2s ease-in-out;
+}
+
+.envelope {
+    width: 820px;
+    height: 100px;
+    background-color: #FBE1D6; /* Rosa suave, similar a un beige rosado */
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    animation: fadeInAnimation 2s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.envelope::after {
+    content: 'Haz clic aquí Elcyyyy, estoy esperando <3 :) (2 veces si no funciona)';
+    position: absolute;
+    font-size: 1.5rem;
+    color: #4B8E49; /* Verde Pacay más suave */
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-weight: bold;
+    white-space: nowrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInAnimation 1.5s ease-in-out;
+}
+
+.envelope-top, .envelope-bottom {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    position: absolute;
+}
+
+.envelope-top {
+    border-bottom: 30px solid #FBE1D6;
+    top: 0;
+}
+
+.envelope-bottom {
+    border-top: 30px solid #FBE1D6;
+    bottom: 0;
+}
+
+.paper {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    background-color: #E0A9A0; /* Rosa suave y cálido */
+    margin: 20px auto;
+    border: 2px solid #D78F8F; /* Rojo Pacay suave */
+    padding: 20px;
+    display: none;
+    animation: fadeInAnimation 2.5s ease-in-out;
+}
+
+.centered-image {
+    display: block;
+    margin: 10px auto;
+    max-width: 240px;
+    height: auto;
+}
+
+.paper-text {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.boton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #6B9E64; /* Verde Pacay suave */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.boton:hover {
+    background-color: #4B8E49; /* Verde Pacay más oscuro */
+}
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
