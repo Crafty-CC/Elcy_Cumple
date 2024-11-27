@@ -4,13 +4,15 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Asegura que el contenido esté al inicio en pantallas más altas */
+    min-height: 100vh; /* Altura mínima para evitar cortes */
     background: linear-gradient(to right, #F9E4D4, #F3D3C3);
     animation: backgroundAnimation 20s infinite alternate;
     -webkit-animation: backgroundAnimation 20s infinite alternate;
-    overflow: hidden; /* Evita scroll innecesario */
+    overflow-y: auto; /* Activa el desplazamiento vertical */
+    box-sizing: border-box;
 }
+
 
 @keyframes backgroundAnimation {
     0% { background-position: 0% 50%; }
