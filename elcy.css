@@ -101,7 +101,7 @@ h2.invitacion {
     margin: 10px auto;
     max-width: 90%; /* Asegura que la imagen no sea demasiado ancha */
     height: auto; /* Mantiene la proporción original */
-    max-height: 300px; /* Altura máxima para reducir su tamaño */
+    max-height: 200px; /* Altura máxima para reducir su tamaño */
 }
 
 .paper-text {
