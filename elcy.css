@@ -6,9 +6,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to right, #F9E4D4, #F3D3C3); /* Beige suave con toque cálido */
+    background: linear-gradient(to right, #F9E4D4, #F3D3C3);
     animation: backgroundAnimation 20s infinite alternate;
     -webkit-animation: backgroundAnimation 20s infinite alternate;
+    overflow: hidden; /* Evita scroll innecesario */
 }
 
 @keyframes backgroundAnimation {
@@ -22,34 +23,41 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 90%; /* Reduce el ancho general para dispositivos más pequeños */
+    max-width: 1000px; /* Límites máximos para pantallas grandes */
+    padding: 10px;
     animation: fadeInAnimation 1s ease-in-out;
+    box-sizing: border-box; /* Asegura que padding no cause overflow */
 }
 
 #title {
-    font-size: 3rem;
-    color: #fff; /* Blanco puro para resaltar */
+    font-size: 2rem; /* Escala para dispositivos pequeños */
+    color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
     padding: 10px;
-    background: linear-gradient(to right, #6B9E64, #4B8E49); /* Verde Pacay suave */
+    background: linear-gradient(to right, #6B9E64, #4B8E49);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeInAnimation 1.5s ease-in-out;
+    width: 100%; /* Asegura que se ajuste al contenedor */
 }
 
 h2.invitacion {
-    font-size: 1.6rem;
+    font-size: 1.2rem; /* Texto más pequeño en dispositivos móviles */
     font-weight: bold;
-    color: #B84E4E; /* Rojo Pacay suave */
+    color: #B84E4E;
     margin-top: 10px;
-    line-height: 1.6;
+    line-height: 1.5;
     animation: fadeInAnimation 2s ease-in-out;
+    word-wrap: break-word; /* Ajusta texto largo */
 }
 
 .envelope {
-    width: 820px;
-    height: 100px;
-    background-color: #FBE1D6; /* Rosa suave, similar a un beige rosado */
+    width: 100%;
+    max-width: 600px; /* Límites máximos para dispositivos grandes */
+    height: auto; /* Altura automática para mantener proporción */
+    background-color: #FBE1D6;
     position: relative;
     cursor: pointer;
     display: flex;
@@ -59,61 +67,42 @@ h2.invitacion {
     animation: fadeInAnimation 2s ease-in-out;
     border-radius: 10px;
     box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Añadido para evitar que el texto se salga */
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .envelope::after {
     content: 'Haz clic aquí Elcyyyy, estoy esperando <3 :) (2 veces si no funciona)';
-    position: absolute;
-    font-size: 1.5rem;
-    color: #4B8E49; /* Verde Pacay más suave */
-    bottom: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
+    font-size: 1rem; /* Texto reducido para pantallas pequeñas */
+    color: #4B8E49;
     font-weight: bold;
-    white-space: nowrap;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     animation: fadeInAnimation 1.5s ease-in-out;
 }
 
-.envelope-top, .envelope-bottom {
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    position: absolute;
-}
-
-.envelope-top {
-    border-bottom: 30px solid #FBE1D6;
-    top: 0;
-}
-
-.envelope-bottom {
-    border-top: 30px solid #FBE1D6;
-    bottom: 0;
-}
-
 .paper {
-    width: 80%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 600px;
     border-radius: 15px;
-    background-color: #E0A9A0; /* Rosa suave y cálido */
+    background-color: #E0A9A0;
     margin: 20px auto;
-    border: 2px solid #D78F8F; /* Rojo Pacay suave */
+    border: 2px solid #D78F8F;
     padding: 20px;
     display: none;
     animation: fadeInAnimation 2.5s ease-in-out;
+    box-sizing: border-box;
 }
 
 .centered-image {
     display: block;
     margin: 10px auto;
-    max-width: 240px;
+    max-width: 100%; /* Imagen se ajusta al contenedor */
     height: auto;
 }
 
 .paper-text {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Texto ajustado para móviles */
     color: #333;
     font-weight: bold;
 }
@@ -122,21 +111,44 @@ h2.invitacion {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
-    font-size: 18px;
-    background-color: #6B9E64; /* Verde Pacay suave */
+    font-size: 16px; /* Botón ligeramente más pequeño */
+    background-color: #6B9E64;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
     border: none;
+    width: 100%;
+    max-width: 300px; /* Asegura que el botón no sea demasiado grande */
+    text-align: center;
 }
 
 .boton:hover {
-    background-color: #4B8E49; /* Verde Pacay más oscuro */
+    background-color: #4B8E49;
 }
 
 @keyframes fadeInAnimation {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+    #title {
+        font-size: 1.8rem;
+    }
+
+    h2.invitacion {
+        font-size: 1rem;
+    }
+
+    .envelope::after {
+        font-size: 0.9rem; /* Texto reducido en pantallas pequeñas */
+    }
+
+    .boton {
+        font-size: 14px; /* Botón más compacto */
+        padding: 8px 16px;
+    }
 }
